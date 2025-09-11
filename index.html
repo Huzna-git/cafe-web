@@ -8,31 +8,50 @@
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Add this to your CSS file instead of inline if you prefer */
+    .primary-nav {
+      display: none;
+    }
+    .primary-nav.open {
+      display: block;
+    }
+
+    /* Optional: always show menu on desktop */
+    @media (min-width: 800px) {
+      .primary-nav {
+        display: block !important;
+      }
+      .nav-toggle {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-row">
-    <a class="logo" href="#">
-      <img src="images/logo.png" alt="H&N Café Logo">
-      <span>H&N Café</span>
-    </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
-
-    <nav id="primary-nav" class="primary-nav" aria-label="Primary">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#featured">Specials</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="#">
+        <img src="images/logo.png" alt="H&N Café Logo">
+        <span>H&N Café</span>
+      </a>
+  
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+  
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#featured">Specials</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header> 
 
 <main>
   <section id="home" class="hero">
@@ -137,7 +156,7 @@
   <section id="gallery" class="section">
     <div class="container">
       <h2>Gallery</h2>
-      <div class="images/gallery-grid">
+      <div class="gallery-grid">
         <img src="images/gallery1.jpg" alt="Latte art">
         <img src="images/gallery2.jpg" alt="Pastries">
         <img src="images/gallery3.jpg" alt="Coffee beans">
