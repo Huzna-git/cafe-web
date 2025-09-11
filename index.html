@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>H&N Café — Coffee & Pastries</title>
+  <meta name="description" content="H&N Café — cozy neighborhood café. Specialty coffee, fresh pastries, friendly vibes." />
+
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="logo" href="#">
+      <img src="images/logo.png" alt="H&N Café Logo">
+      <span>H&N Café</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" hidden>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="hero-overlay">
+      <div class="container hero-content">
+        <h1>H&N Café</h1>
+        <p class="tagline">Local coffee. Fresh pastries. Cozy corners.</p>
+        <p><a class="btn" href="#menu">See Menu</a> <a class="btn ghost" href="#contact">Visit Us</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="section">
+    <div class="container">
+      <h2>Our Menu</h2>
+      <p class="muted">Popular items — simple, fresh, delicious.</p>
+
+      <div class="menu-grid">
+        <article class="menu-item">
+          <img src="images/espresso.jpg" alt="Espresso" />
+          <div class="menu-body">
+            <h3>Espresso</h3>
+            <p class="price">QAR 6</p>
+            <p class="desc">Intense, single shot of our house espresso.</p>
+          </div>
+        </article>
+
+        <article class="menu-item">
+          <img src="images/cappuccino.jpg" alt="Cappuccino" />
+          <div class="menu-body">
+            <h3>Cappuccino</h3>
+            <p class="price">QAR 12</p>
+            <p class="desc">Velvety foam and perfectly balanced espresso.</p>
+          </div>
+        </article>
+
+        <article class="menu-item">
+          <img src="images/avocado_toast.jpg" alt="Avocado Toast" />
+          <div class="menu-body">
+            <h3>Avocado Toast</h3>
+            <p class="price">QAR 25</p>
+            <p class="desc">Sourdough, smashed avocado, chili flakes.</p>
+          </div>
+        </article>
+
+        <article class="menu-item">
+          <img src="images/croissant.jpg" alt="Croissant" />
+          <div class="menu-body">
+            <h3>Butter Croissant</h3>
+            <p class="price">QAR 10</p>
+            <p class="desc">Flaky, buttery, baked fresh daily.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section alt">
+    <div class="container about-grid">
+      <div>
+        <h2>About Us</h2>
+        <p>We opened our doors to bring a calm corner to the neighborhood — great coffee, warm pastries, and friendly service. Open daily for breakfast and afternoon coffee.</p>
+        <ul class="quick-info">
+          <li><strong>Hours:</strong> Mon–Sun: 7am – 11pm</li>
+          <li><strong>Address:</strong> 123 Street Name, City</li>
+          <li><strong>Phone:</strong> +974 5555 5555</li>
+        </ul>
+      </div>
+      <div class="about-photo">
+        <img src="images/interior.jpg" alt="Interior of the cafe">
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="images/gallery1.jpg" alt="Latte art">
+        <img src="images/gallery2.jpg" alt="Pastries">
+        <img src="images/gallery3.jpg" alt="Coffee beans">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt">
+    <div class="container contact-grid">
+      <div>
+        <h2>Contact & Visit</h2>
+        <p>Drop by or send us a message — we’ll get back within a day.</p>
+
+        <form id="contact-form" action="https://formspree.io/f/YOUR_ID" method="POST">
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <input type="hidden" name="_subject" value="Website message">
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <p class="muted">Prefer to call? <a href="tel:+97455555555">+974 5555 5555</a></p>
+      </div>
+
+      <div>
+        <h3>Find us</h3>
+        <div class="map-wrap">
+          <iframe title="Map" src="https://www.google.com/maps/embed?pb=..." loading="lazy"></iframe>
+        </div>
+
+        <h4>Opening Hours</h4>
+        <table class="hours">
+          <tr><td>Mon – Fri</td><td>7:00 – 11:00</td></tr>
+          <tr><td>Sat – Sun</td><td>5:00 – 12:00</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div>
+      <p>&copy; <span id="year"></span> H&N Café — All rights reserved</p>
+    </div>
+    <div class="socials">
+      <a href="#" aria-label="Instagram">🔗 Instagram</a>
+      <a href="#" aria-label="Facebook">🔗 Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
