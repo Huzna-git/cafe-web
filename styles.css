@@ -235,6 +235,7 @@ h2 {
 }
 
 /* Gallery */
+/* Gallery */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -242,9 +243,9 @@ h2 {
   margin-top: 1.5rem;
 }
 .gallery-grid img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+  width: 100%; /* Makes the image take up the full width of its grid cell */
+  height: 200px; /* **Sets a fixed height for all images** */
+  object-fit: cover; /* **Scales and crops the image to fill the container without distortion** */
   border-radius: var(--radius);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
