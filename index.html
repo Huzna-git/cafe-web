@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>H&N Café — Coffee & Pastries</title>
   <meta name="description" content="H&N Café — cozy neighborhood café. Specialty coffee, fresh pastries, friendly vibes." />
-
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -15,18 +14,20 @@
 <header class="site-header">
   <div class="container header-row">
     <a class="logo" href="#">
-      <img src="logo.png" alt="H&N Café Logo">
+      <img src="images/logo.png" alt="H&N Café Logo">
       <span>H&N Café</span>
     </a>
 
     <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
 
-    <nav id="primary-nav" class="primary-nav" aria-label="Primary" hidden>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary">
       <ul>
         <li><a href="#home">Home</a></li>
+        <li><a href="#featured">Specials</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#events">Events</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -39,7 +40,35 @@
       <div class="container hero-content">
         <h1>H&N Café</h1>
         <p class="tagline">Local coffee. Fresh pastries. Cozy corners.</p>
-        <p><a class="btn" href="#menu">See Menu</a> <a class="btn ghost" href="#contact">Visit Us</a></p>
+        <p>
+          <a class="btn" href="#menu">See Menu</a> 
+          <a class="btn ghost" href="#contact">Visit Us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured" class="section">
+    <div class="container">
+      <h2>Today's Specials</h2>
+      <p class="muted">Handpicked for you — fresh & delightful.</p>
+      <div class="menu-grid">
+        <article class="menu-item">
+          <img src="images/seasonal_latte.jpg" alt="Seasonal Latte" />
+          <div class="menu-body">
+            <h3>Seasonal Latte</h3>
+            <p class="price">QAR 15</p>
+            <p class="desc">Pumpkin spice, caramel drizzle, and love in every sip.</p>
+          </div>
+        </article>
+        <article class="menu-item">
+          <img src="images/blueberry_muffin.jpg" alt="Blueberry Muffin" />
+          <div class="menu-body">
+            <h3>Blueberry Muffin</h3>
+            <p class="price">QAR 12</p>
+            <p class="desc">Soft, buttery muffin packed with fresh blueberries.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -48,10 +77,9 @@
     <div class="container">
       <h2>Our Menu</h2>
       <p class="muted">Popular items — simple, fresh, delicious.</p>
-
       <div class="menu-grid">
         <article class="menu-item">
-          <img src="espresso.jpg" alt="Espresso" />
+          <img src="images/espresso.jpg" alt="Espresso" />
           <div class="menu-body">
             <h3>Espresso</h3>
             <p class="price">QAR 6</p>
@@ -60,7 +88,7 @@
         </article>
 
         <article class="menu-item">
-          <img src="cappuccino.jpg" alt="Cappuccino" />
+          <img src="images/cappuccino.jpg" alt="Cappuccino" />
           <div class="menu-body">
             <h3>Cappuccino</h3>
             <p class="price">QAR 12</p>
@@ -69,7 +97,7 @@
         </article>
 
         <article class="menu-item">
-          <img src="avocado_toast.jpg" alt="Avocado Toast" />
+          <img src="images/avocado_toast.jpg" alt="Avocado Toast" />
           <div class="menu-body">
             <h3>Avocado Toast</h3>
             <p class="price">QAR 25</p>
@@ -78,7 +106,7 @@
         </article>
 
         <article class="menu-item">
-          <img src="croissant.jpg" alt="Croissant" />
+          <img src="images/croissant.jpg" alt="Croissant" />
           <div class="menu-body">
             <h3>Butter Croissant</h3>
             <p class="price">QAR 10</p>
@@ -101,7 +129,7 @@
         </ul>
       </div>
       <div class="about-photo">
-        <img src="interior.jpg" alt="Interior of the cafe">
+        <img src="images/interior.jpg" alt="Interior of the cafe">
       </div>
     </div>
   </section>
@@ -110,51 +138,67 @@
     <div class="container">
       <h2>Gallery</h2>
       <div class="gallery-grid">
-        <img src="gallery1.jpg" alt="Latte art">
-        <img src="gallery2.jpg" alt="Pastries">
-        <img src="gallery3.jpg" alt="Coffee beans">
+        <img src="images/gallery1.jpg" alt="Latte art">
+        <img src="images/gallery2.jpg" alt="Pastries">
+        <img src="images/gallery3.jpg" alt="Coffee beans">
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section alt">
-    <div class="container contact-grid">
-      <div>
-        <h2>Contact & Visit</h2>
-        <p>Drop by or send us a message — we’ll get back within a day.</p>
-
-        <form id="contact-form" action="https://formspree.io/f/YOUR_ID" method="POST">
-          <label>
-            Name
-            <input type="text" name="name" required>
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" required>
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="4" required></textarea>
-          </label>
-          <input type="hidden" name="_subject" value="Website message">
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-
-        <p class="muted">Prefer to call? <a href="tel:+97455555555">+974 5555 5555</a></p>
+  <section id="testimonials" class="section alt">
+    <div class="container">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <blockquote>
+          "Best coffee in town! Cozy atmosphere and friendly staff make every visit a delight." — Sarah M.
+        </blockquote>
+        <blockquote>
+          "The croissants are heavenly! I come here every weekend." — Ahmed R.
+        </blockquote>
+        <blockquote>
+          "Love the avocado toast. Perfect place to work or relax." — Lina K.
+        </blockquote>
       </div>
+    </div>
+  </section>
 
-      <div>
-        <h3>Find us</h3>
-        <div class="map-wrap">
-          <iframe title="Map" src="https://www.google.com/maps/embed?pb=..." loading="lazy"></iframe>
-        </div>
-
-        <h4>Opening Hours</h4>
-        <table class="hours">
-          <tr><td>Mon – Fri</td><td>7:00 – 11:00</td></tr>
-          <tr><td>Sat – Sun</td><td>5:00 – 12:00</td></tr>
-        </table>
+  <section id="events" class="section">
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      <div class="events-grid">
+        <article>
+          <h3>Latte Art Workshop</h3>
+          <p><strong>Date:</strong> Sep 20, 2025</p>
+          <p>Learn to create beautiful latte art with our barista experts.</p>
+        </article>
+        <article>
+          <h3>Live Acoustic Night</h3>
+          <p><strong>Date:</strong> Sep 27, 2025</p>
+          <p>Relax with live music and freshly brewed coffee.</p>
+        </article>
       </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="mailto:huznasha@email.com" method="GET" enctype="text/plain">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p class="muted">* Clicking "Send Message" will open your email client to send the message.</p>
     </div>
   </section>
 </main>
@@ -165,12 +209,42 @@
       <p>&copy; <span id="year"></span> H&N Café — All rights reserved</p>
     </div>
     <div class="socials">
-      <a href="#" aria-label="Instagram">🔗 Instagram</a>
-      <a href="#" aria-label="Facebook">🔗 Facebook</a>
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="Facebook">Facebook</a>
+      <a href="#" aria-label="Twitter">Twitter</a>
     </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const yearEl = document.getElementById('year');
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    if(navToggle){
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        nav.hidden = expanded;
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          if(nav && !nav.hasAttribute('hidden') && window.innerWidth < 800){
+            nav.setAttribute('hidden','');
+            navToggle.setAttribute('aria-expanded','false');
+          }
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
