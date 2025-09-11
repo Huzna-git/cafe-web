@@ -352,7 +352,7 @@ form button {
   }
 }
 body {
-  background-image: url('images/baground.png'); /* Your image here */
+  background-image: url('baground.png'); /* Your image here */
   background-size: cover;
   background-position: center;
   position: relative; /* Needed for the pseudo-element to position correctly */
