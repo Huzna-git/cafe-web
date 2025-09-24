@@ -1,31 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Set year
-  const yearEl = document.getElementById('year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.getElementById('primary-nav');
 
-  // Mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('primary-nav');
-  if(navToggle){
     navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      nav.hidden = expanded;
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        primaryNav.classList.toggle('open');
     });
-  }
 
-  // Smooth scroll for links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if(target){
-        e.preventDefault();
-        target.scrollIntoView({behavior:'smooth', block:'start'});
-        if(nav && !nav.hasAttribute('hidden') && window.innerWidth < 800){
-          nav.setAttribute('hidden','');
-          navToggle.setAttribute('aria-expanded','false');
-        }
-      }
+    // Close nav when a link is clicked
+    const navLinks = primaryNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (primaryNav.classList.contains('open')) {
+                primaryNav.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
     });
-  });
+
+    // Dynamically set the current year in the footer
+    const yearSpan = document.getElementById('year');
+    const currentYear = new Date().getFullYear();
+    if (yearSpan) {
+        yearSpan.textContent = currentYear;
+    }
 });

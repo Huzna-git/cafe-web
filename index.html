@@ -1,3 +1,17 @@
+<!--
+Project: H&N Café — Modern responsive single-page website
+Files included below (copy each section into separate files if you want):
+  - index.html
+  - styles.css
+  - script.js
+
+Notes:
+  - Replace placeholder image URLs with your own images in /images/ or an assets folder.
+  - The contact form is a static example — swap the action to your form handler (Formspree, Netlify, server endpoint).
+  - Uses modern, accessible markup and progressive enhancement.
+-->
+
+<!-- ========================= index.html ========================= -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,264 +20,179 @@
   <title>H&N Café — Coffee & Pastries</title>
   <meta name="description" content="H&N Café — cozy neighborhood café. Specialty coffee, fresh pastries, friendly vibes." />
   <link rel="icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Add this to your CSS file instead of inline if you prefer */
-    .primary-nav {
-      display: none;
-    }
-    .primary-nav.open {
-      display: block;
-    }
-
-    /* Optional: always show menu on desktop */
-    @media (min-width: 800px) {
-      .primary-nav {
-        display: block !important;
-      }
-      .nav-toggle {
-        display: none;
-      }
-    }
-  </style>
 </head>
 <body>
-
   <header class="site-header">
-    <div class="container header-row">
-      <a class="logo" href="#">
-        <img src="images/logo.png" alt="H&N Café Logo">
-        <span>H&N Café</span>
-      </a>
-  
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
-  
+    <div class="container header-grid">
+      <a href="#home" class="brand" aria-label="H and N Cafe">H&N <span class="dot">•</span> Café</a>
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#featured">Specials</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#events">Events</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
     </div>
-  </header> 
+  </header>
 
-<main>
-  <section id="home" class="hero">
-    <div class="hero-overlay">
-      <div class="container hero-content">
-        <h1>H&N Café</h1>
-        <p class="tagline">Local coffee. Fresh pastries. Cozy corners.</p>
-        <p>
-          <a class="btn" href="#menu">See Menu</a> 
-          <a class="btn ghost" href="#contact">Visit Us</a>
-        </p>
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Craft Coffee. Fresh Pastries. Cozy Vibes.</h1>
+          <p>Locally roasted beans, seasonal menus, and friendly faces — the neighbourhood spot for your daily ritual.</p>
+          <div class="hero-cta">
+            <a href="#menu" class="btn btn-primary">View Menu</a>
+            <a href="#contact" class="btn">Book a Table</a>
+          </div>
+          <ul class="stats">
+            <li><strong>10k+</strong><span>Happy cups</span></li>
+            <li><strong>20</strong><span>Seasonal pastries</span></li>
+            <li><strong>4.8★</strong><span>Average rating</span></li>
+          </ul>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80&auto=format&fit=crop" alt="Steaming latte in a ceramic cup on a wooden table">
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="featured" class="section">
-    <div class="container">
-      <h2>Today's Specials</h2>
-      <p class="muted">Handpicked for you — fresh & delightful.</p>
-      <div class="menu-grid">
-        <article class="menu-item">
-          <img src="images/seasonal_latte.jpg" alt="Seasonal Latte" />
-          <div class="menu-body">
-            <h3>Seasonal Latte</h3>
-            <p class="price">QAR 15</p>
-            <p class="desc">Pumpkin spice, caramel drizzle, and love in every sip.</p>
-          </div>
-        </article>
-        <article class="menu-item">
-          <img src="images/blueberry_muffin.jpg" alt="Blueberry Muffin" />
-          <div class="menu-body">
-            <h3>Blueberry Muffin</h3>
-            <p class="price">QAR 12</p>
-            <p class="desc">Soft, buttery muffin packed with fresh blueberries.</p>
-          </div>
-        </article>
+    <section id="menu" class="section menu-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Menu Highlights</h2>
+          <p>Thoughtfully sourced and prepared — something for everyone.</p>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&q=60&auto=format&fit=crop" alt="Espresso shot">
+            <div class="menu-card-body">
+              <h3>Signature Espresso</h3>
+              <p>House blend, pulled to order — bright, chocolatey, and balanced.</p>
+              <div class="price">$3.50</div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=60&auto=format&fit=crop" alt="Latte art">
+            <div class="menu-card-body">
+              <h3>Velvet Latte</h3>
+              <p>Silky steamed milk over our signature espresso. Try oat or almond.</p>
+              <div class="price">$4.25</div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1542868724-6b5a7d5b0d8e?w=800&q=60&auto=format&fit=crop" alt="Croissant on plate">
+            <div class="menu-card-body">
+              <h3>Buttery Croissant</h3>
+              <p>Flaky and buttery, baked daily using traditional techniques.</p>
+              <div class="price">$2.75</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="menu-actions">
+          <a href="#" class="btn">Download Full Menu (PDF)</a>
+          <a href="#contact" class="btn btn-outline">Catering & Events</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="menu" class="section">
-    <div class="container">
-      <h2>Our Menu</h2>
-      <p class="muted">Popular items — simple, fresh, delicious.</p>
-      <div class="menu-grid">
-        <article class="menu-item">
-          <img src="images/espresso.jpg" alt="Espresso" />
-          <div class="menu-body">
-            <h3>Espresso</h3>
-            <p class="price">QAR 6</p>
-            <p class="desc">Intense, single shot of our house espresso.</p>
-          </div>
-        </article>
-
-        <article class="menu-item">
-          <img src="images/cappuccino.jpg" alt="Cappuccino" />
-          <div class="menu-body">
-            <h3>Cappuccino</h3>
-            <p class="price">QAR 12</p>
-            <p class="desc">Velvety foam and perfectly balanced espresso.</p>
-          </div>
-        </article>
-
-        <article class="menu-item">
-          <img src="images/avocado_toast.jpg" alt="Avocado Toast" />
-          <div class="menu-body">
-            <h3>Avocado Toast</h3>
-            <p class="price">QAR 25</p>
-            <p class="desc">Sourdough, smashed avocado, chili flakes.</p>
-          </div>
-        </article>
-
-        <article class="menu-item">
-          <img src="images/croissant.jpg" alt="Croissant" />
-          <div class="menu-body">
-            <h3>Butter Croissant</h3>
-            <p class="price">QAR 10</p>
-            <p class="desc">Flaky, buttery, baked fresh daily.</p>
-          </div>
-        </article>
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div class="about-media">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1200&q=80&auto=format&fit=crop" alt="Barista pouring coffee">
+        </div>
+        <div>
+          <h2>Our Story</h2>
+          <p>Founded in 2015, H&N Café grew from a love of conversation and carefully crafted coffee. We roast small batches, champion local bakers, and design a warm space where the community can connect.</p>
+          <ul class="bullets">
+            <li>Single-origin offerings rotated weekly</li>
+            <li>Vegetarian & vegan pastries</li>
+            <li>Free Wi‑Fi and plenty of seating</li>
+          </ul>
+          <a href="#gallery" class="btn">See Our Space</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about" class="section alt">
-    <div class="container about-grid">
+    <section id="gallery" class="section gallery">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>Little moments from the café.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=800&q=60&auto=format&fit=crop" alt="Coffee and laptop on table">
+          <img src="https://images.unsplash.com/photo-1516685018646-549d7f8d9f5a?w=800&q=60&auto=format&fit=crop" alt="Pastries on display">
+          <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?w=800&q=60&auto=format&fit=crop" alt="Cozy seating area">
+          <img src="https://images.unsplash.com/photo-1511399424435-0b9f5e4a9ee3?w=800&q=60&auto=format&fit=crop" alt="Barista making latte art">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact & Visit</h2>
+          <p>Drop by or send us a message — we’ll get back within a day.</p>
+
+          <address>
+            <strong>H&N Café</strong><br>
+            42 Morning Lane<br>
+            Doha, Qatar<br>
+            <a href="tel:+97470000000">+974 7000 0000</a>
+          </address>
+
+          <p><strong>Opening hours</strong><br>
+            Mon–Fri 7:00–18:00<br>
+            Sat–Sun 8:00–17:00
+          </p>
+        </div>
+
+        <form id="contact-form" action="#" method="POST" class="contact-form">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="reset" class="btn btn-outline">Clear</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
       <div>
-        <h2>About Us</h2>
-        <p>We opened our doors to bring a calm corner to the neighborhood — great coffee, warm pastries, and friendly service. Open daily for breakfast and afternoon coffee.</p>
-        <ul class="quick-info">
-          <li><strong>Hours:</strong> Mon–Sun: 7am – 11pm</li>
-          <li><strong>Address:</strong> 123 Street Name, City</li>
-          <li><strong>Phone:</strong> +974 5555 5555</li>
-        </ul>
+        <p>&copy; <span id="year">2025</span> H&N Café. All rights reserved.</p>
       </div>
-      <div class="about-photo">
-        <img src="images/interior.jpg" alt="Interior of the cafe">
+      <div class="social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="X">X</a>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <section id="gallery" class="section">
-    <div class="container">
-      <h2>Gallery</h2>
-      <div class="gallery-grid">
-        <img src="images/gallery1.jpg" alt="Latte art">
-        <img src="images/gallery2.jpg" alt="Pastries">
-        <img src="images/gallery3.jpg" alt="Coffee beans">
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials" class="section alt">
-    <div class="container">
-      <h2>What Our Customers Say</h2>
-      <div class="testimonials-grid">
-        <blockquote>
-          "Best coffee in town! Cozy atmosphere and friendly staff make every visit a delight." — Sarah M.
-        </blockquote>
-        <blockquote>
-          "The croissants are heavenly! I come here every weekend." — Ahmed R.
-        </blockquote>
-        <blockquote>
-          "Love the avocado toast. Perfect place to work or relax." — Lina K.
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <section id="events" class="section">
-    <div class="container">
-      <h2>Upcoming Events</h2>
-      <div class="events-grid">
-        <article>
-          <h3>Latte Art Workshop</h3>
-          <p><strong>Date:</strong> Sep 20, 2025</p>
-          <p>Learn to create beautiful latte art with our barista experts.</p>
-        </article>
-        <article>
-          <h3>Live Acoustic Night</h3>
-          <p><strong>Date:</strong> Sep 27, 2025</p>
-          <p>Relax with live music and freshly brewed coffee.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form action="mailto:huznasha@email.com" method="GET" enctype="text/plain">
-        <label>
-          Name
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-      <p class="muted">* Clicking "Send Message" will open your email client to send the message.</p>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-row">
-    <div>
-      <p>&copy; <span id="year"></span> H&N Café — All rights reserved</p>
-    </div>
-    <div class="socials">
-      <a href="#" aria-label="Instagram">Instagram</a>
-      <a href="#" aria-label="Facebook">Facebook</a>
-      <a href="#" aria-label="Twitter">Twitter</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const yearEl = document.getElementById('year');
-    if(yearEl) yearEl.textContent = new Date().getFullYear();
-
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('primary-nav');
-    if(navToggle){
-      navToggle.addEventListener('click', () => {
-        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!expanded));
-        nav.hidden = expanded;
-      });
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if(target){
-          e.preventDefault();
-          target.scrollIntoView({behavior:'smooth', block:'start'});
-          if(nav && !nav.hasAttribute('hidden') && window.innerWidth < 800){
-            nav.setAttribute('hidden','');
-            navToggle.setAttribute('aria-expanded','false');
-          }
-        }
-      });
-    });
-  });
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
